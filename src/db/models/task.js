@@ -11,15 +11,17 @@ module.exports = (sequelize, DataTypes) => {
     value: {
       type: DataTypes.STRING,
       allowNull: false,
+      validate: {
+        notEmpty: true,
+      }
     },
     isDone: {
       type: DataTypes.BOOLEAN,
       defaultValue: false,
     },
     userId: {
-      type: DataTypes.INTEGER,
       allowNull: false,
-
+      type: DataTypes.INTEGER,
     },
     files: DataTypes.ARRAY( DataTypes.STRING )
   }, {} );
